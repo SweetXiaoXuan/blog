@@ -1,0 +1,15 @@
+/target
+*.classpath
+*.project
+*.settings
+*.swp
+*.iml
+.idea/
+.idea/artifacts/lv_war_exploded.xml
+.mymetadata
+.settings
+.classpath
+.project
+target
+*.log
+/logs
