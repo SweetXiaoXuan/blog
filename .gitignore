@@ -13,4 +13,3 @@
 target
 *.log
 /logs
-/.idea
