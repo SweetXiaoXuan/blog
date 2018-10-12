@@ -1,25 +1,18 @@
 package com.blog.api.model;
 
-
 import lombok.Data;
 
 /**
- * @author 言曌
- * @date 2018/7/29 下午5:51
+ * user
+ * @author liumengwei
+ * @date 2018/10/12
+ * @since V1.0
  */
-
 @Data
 public class User {
     private Integer id;
 
     private String username;
 
-    private String nickname;
-
     private String password;
-
-    private String status;
-
-
-
 }

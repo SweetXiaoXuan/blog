@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
 /**
- * @author 言曌
- * @date 2018/7/29 下午9:23
+ * user
+ * @author liumengwei
+ * @date 2018/10/12
+ * @since V1.0
  */
 @FeignClient(name = "cloud-producer")
 public interface UserService {
@@ -52,5 +54,8 @@ public interface UserService {
      */
     @PostMapping("/user")
     User insertUser(@RequestBody User user);
+
+    @PostMapping("/login")
+    User getUserByUsernameAndPassword(@RequestBody User user);
 }
 

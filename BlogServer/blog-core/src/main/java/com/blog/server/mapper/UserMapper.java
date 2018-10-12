@@ -2,12 +2,13 @@ package com.blog.server.mapper;
 
 import com.blog.api.model.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
- * @author 言曌
+ * @author liumengwei
  * @date 2018/7/29 下午6:02
  */
 
@@ -24,5 +25,8 @@ public interface UserMapper {
     int update(User record);
 
     List<User> findAll();
+
+    @Select("select * from user where username = #{username} and password = #{password}")
+    User getUserByUsernameAndPassword(User user);
 
 }

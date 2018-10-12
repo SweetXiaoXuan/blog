@@ -16,7 +16,7 @@ import java.util.List;
 
 
 /**
- * @author 言曌
+ * @author liumengwei
  * @date 2018/7/29 下午6:16
  */
 @RestController
@@ -55,5 +55,10 @@ public class UserServiceImpl implements UserService {
         Integer userId = userMapper.insert(user);
         user.setId(userId);
         return user;
+    }
+
+    @Override
+    public User getUserByUsernameAndPassword(@RequestBody User user) {
+        return userMapper.getUserByUsernameAndPassword(user);
     }
 }

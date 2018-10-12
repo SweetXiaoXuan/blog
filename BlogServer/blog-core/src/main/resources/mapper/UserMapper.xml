@@ -4,9 +4,7 @@
 
     <resultMap id="BaseResultMap" type="com.blog.api.model.User">
         <id column="id" jdbcType="INTEGER" property="id" />
-        <result column="nickname" jdbcType="VARCHAR" property="nickname" />
         <result column="password" jdbcType="VARCHAR" property="password" />
-        <result column="status" jdbcType="VARCHAR" property="status" />
         <result column="username" jdbcType="VARCHAR" property="username" />
     </resultMap>
 
@@ -90,6 +88,5 @@
         <include refid="Base_Column_List" />
         from user
     </select>
-
 
 </mapper>
