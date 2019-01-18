@@ -1,0 +1,105 @@
+ip:
+  database: localhost
+  redis: localhost
+server:
+  port: 8080
+  servlet:
+    context-path: /feel
+spring:
+  application:
+    name: feel
+  datasource:
+    url: jdbc:mysql://${ip.database}:3306/feel?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initial-size: 1
+      max-active: 10
+      min-idle: 1
+      max-wait: 10000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      validation-query: select 1
+      validation-query-timeout: 10000
+      filters: stat,wall,slf4j
+
+  redis:
+    database: 0
+    host: ${ip.redis}
+    password: 123456
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 500
+        min-idle: 50
+        max-active: 2000
+  devtools:
+    livereload:
+      port: 35730
+  session:
+    store-type: redis
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+#pageHelper
+restart:
+  include:
+    mapper: /mapper-[\\w-\\.]+jar
+    pagehelper: /pagehelper-[\\w-\\.]+jar
+
+mybatis:
+  type-aliases-package: com.mf.feel.model
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.digital.meeting.dal.entity
+  #  typeEnumsPackage: com.digital.meeting.dal.enums
+  global-config:
+    # 数据库相关配置
+    db-config:
+      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: UUID
+      #字段策略 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断"),NOT_EMPTY:"非空判断"
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      #数据库大写下划线转换
+      #capital-mode: true
+    #逻辑删除配置
+    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+    logic-delete-value: 1
+    logic-not-delete-value: 0
+    #      db-type: h2
+    #刷新mapper 调试神器
+    refresh: true
+  # 原生配置
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+file:
+  download:
+    tmp: ${nginx.path}tmp/ #下载tmp文件地址
+  upload:
+    basePath: d:/data/upload/
+    tmp: ${file.upload.basePath}tmp/ #上传tmp文件地址
+    path:  file/
+  requestPath: http://${ip.requestPath}:${server.port}/
+
+spring.boot.logback:
+  dir: /data/logs/${spring.application.name}
+  level: info
