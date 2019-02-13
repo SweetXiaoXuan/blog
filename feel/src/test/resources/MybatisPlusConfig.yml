@@ -16,9 +16,5 @@ xml: xml
 #生成路径
 outputDir: "\\aGenerator\\"
 unixOutputDir: "aGenerator"
-#需要自动生成的表
-tables:
-#生成人
-author: xurunfei
 #需要消除的表前缀
 tablePre:
