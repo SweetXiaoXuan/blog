@@ -16,6 +16,8 @@ xml: xml
 #生成路径
 outputDir: "\\aGenerator\\"
 unixOutputDir: "aGenerator"
+#  outputDir: "/Applications/workspace/intellijidea_workspace/other/blog/feel/src/main/java/"
+#  unixOutputDir: "/Applications/workspace/intellijidea_workspace/other/blog/feel/src/main/java/"
 #需要自动生成的表
 tables:
 #生成人
