@@ -61,7 +61,7 @@ public class GeneratorService {
         gc.setBaseResultMap(true);// XML ResultMap
         gc.setBaseColumnList(false);// XML columList
 //         .setKotlin(true) 是否生成 kotlin 代码
-        gc.setAuthor(config.getAuthor());
+        gc.setAuthor(scannerInfo("author"));
 
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
         gc.setMapperName("%sMapper");
@@ -209,7 +209,7 @@ public class GeneratorService {
 
     /**
      * <p>
-     * 读取控制台内容
+     * 读取控制台表内容
      * </p>
      */
     public static String[] scanner(String tip) {
@@ -218,17 +218,34 @@ public class GeneratorService {
         List<String> tables = new ArrayList<>();
 
         while (scanner.hasNext(Pattern.compile("[^n].*"))) {
-            System.out.println("进入");
             String ipt = scanner.nextLine();
             if (StringUtils.isEmpty(ipt)) {
                 break;
             }
             tables.add(ipt);
+            System.out.println("请继续输入" + tip + "(输入n结束)：");
         }
         System.out.println(tables);
         if (tables.size() == 0) {
             throw new MybatisPlusException("未输入表名" + tip + "！");
         }
         return tables.toArray(new String[0]);
+    }
+
+    /**
+     * <p>
+     * 读取控制台内容
+     * </p>
+     */
+    public static String scannerInfo(String tip) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入" + tip + "：");
+        if (scanner.hasNext()) {
+            String ipt = scanner.next();
+            if (StringUtils.isNotEmpty(ipt)) {
+                return ipt;
+            }
+        }
+        throw new MybatisPlusException("请输入正确的" + tip + "！");
     }
 }
