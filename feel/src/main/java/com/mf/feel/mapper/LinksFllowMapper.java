@@ -2,6 +2,7 @@ package com.mf.feel.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.mf.feel.model.LinksFllow;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.mf.feel.model.LinksFllow;
  * @author xurunfei
  * @since 2019-02-13
  */
+@Mapper
 public interface LinksFllowMapper extends BaseMapper<LinksFllow> {
 
 }

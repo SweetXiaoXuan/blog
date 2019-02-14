@@ -2,6 +2,7 @@ package com.mf.feel.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.mf.feel.model.Programa;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.mf.feel.model.Programa;
  * @author xurunfei
  * @since 2019-02-13
  */
+@Mapper
 public interface ProgramaMapper extends BaseMapper<Programa> {
 
 }

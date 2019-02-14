@@ -24,7 +24,7 @@
         <fastjson.version>1.2.46</fastjson.version>
         <jackson.version>2.9.6</jackson.version>
         <mysql.connect.java>8.0.11</mysql.connect.java>
-        <yaml>1.19</yaml>
+        <yaml>1.23</yaml>
 
     </properties>
 
@@ -127,7 +127,6 @@
             <artifactId>snakeyaml</artifactId>
             <version>${yaml}</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
