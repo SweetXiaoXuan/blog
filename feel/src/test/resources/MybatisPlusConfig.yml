@@ -16,5 +16,7 @@ xml: xml
 #生成路径
 outputDir: "\\aGenerator\\"
 unixOutputDir: "aGenerator"
+#  outputDir: "/Applications/workspace/intellijidea_workspace/other/blog/feel/src/main/java/"
+#  unixOutputDir: "/Applications/workspace/intellijidea_workspace/other/blog/feel/src/main/java/"
 #需要消除的表前缀
 tablePre:
