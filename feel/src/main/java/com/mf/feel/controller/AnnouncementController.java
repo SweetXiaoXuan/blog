@@ -1,8 +1,11 @@
 package com.mf.feel.controller;
 
 
+import com.mf.feel.service.AnnouncementService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.annotation.Resource;
 
 /**
  * <p>
@@ -15,5 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/announcement")
 public class AnnouncementController {
+    @Resource
+    private AnnouncementService announcementService;
 
 }
