@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mf.feel.mapper.SystemInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.mf.feel.model.SystemInfo">
+        <id column="id" property="id"/>
+        <result column="server_software" property="serverSoftware"/>
+        <result column="java_version" property="javaVersion"/>
+        <result column="operating_system" property="operatingSystem"/>
+        <result column="java_mode" property="javaMode"/>
+        <result column="mysql_version" property="mysqlVersion"/>
+        <result column="program_version" property="programVersion"/>
+        <result column="program_code" property="programCode"/>
+        <result column="copyright" property="copyright"/>
+    </resultMap>
+
+</mapper>

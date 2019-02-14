@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mf.feel.mapper.SystemBasicMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.mf.feel.model.SystemBasic">
+        <result column="title" property="title"/>
+        <result column="subheading" property="subheading"/>
+        <result column="record_number" property="recordNumber"/>
+        <result column="login_timeout_settings" property="loginTimeoutSettings"/>
+        <result column="url" property="url"/>
+        <result column="keyword" property="keyword"/>
+        <result column="description" property="description"/>
+        <result column="email" property="email"/>
+    </resultMap>
+
+</mapper>
